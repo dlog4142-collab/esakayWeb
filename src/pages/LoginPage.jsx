@@ -18,8 +18,8 @@ export default function LoginPage() {
   const email = "hello@example.com";
   const password = "hello";
 
-  const handleLogin = async () => {
-    // Simulate login call
+  const handleLogin = async (event) => {
+    event.preventDefault();
     const res = await authApi.login({
       email: "test@example.com",
       password: "password",
@@ -38,7 +38,7 @@ export default function LoginPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <form onSubmit={handleLogin}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
@@ -60,9 +60,14 @@ export default function LoginPage() {
                     Forgot your password?
                   </a>
                 </div>
-                <Input id="password" type="password" required value={email} />
+                <Input
+                  id="password"
+                  type="password"
+                  required
+                  value={password}
+                />
               </div>
-              <Button type="submit" className="w-full" onClick={handleLogin}>
+              <Button type="submit" className="w-full">
                 Login
               </Button>
             </div>
