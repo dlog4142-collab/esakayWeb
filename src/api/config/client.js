@@ -1,24 +1,26 @@
-import axios from 'axios';
+import axios from "axios";
+
+const baseURL = import.meta.env.VITE_API_BASE_URL || "";
 
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://api.example.com/v1',
+  baseURL: baseURL || "",
   timeout: 10000,
   headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
+    "Content-Type": "application/json",
+    Accept: "application/json",
   },
 });
 
 // Request Interceptor: Attach Token
 apiClient.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('auth_token');
+    const token = localStorage.getItem("auth_token");
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
 // Response Interceptor: Global Error Handling & Token Expiry
@@ -28,14 +30,14 @@ apiClient.interceptors.response.use(
     const { response } = error;
     if (response) {
       if (response.status === 401) {
-        localStorage.removeItem('auth_token');
-        window.location.href = '/login';
+        localStorage.removeItem("auth_token");
+        window.location.href = "/login";
       } else if (response.status === 403) {
-        console.error('Access forbidden.');
+        console.error("Access forbidden.");
       }
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 export default apiClient;

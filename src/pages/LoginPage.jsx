@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardFooter,
@@ -15,17 +14,18 @@ import { authApi } from "../api/authApi";
 
 export default function LoginPage() {
   const navigate = useNavigate();
-  const email = "hello@example.com";
-  const password = "hello";
+  // const email = "hello@example.com";
+  const emailVal = "admin@gmail.com";
+  const passwordVal = "admin";
 
   const handleLogin = async (event) => {
     event.preventDefault();
     const res = await authApi.login({
-      email: "test@example.com",
-      password: "password",
+      email: emailVal,
+      password: passwordVal,
     });
     localStorage.setItem("auth_token", res.token);
-    navigate("/dashboard");
+    // navigate("/dashboard");
   };
 
   return (
@@ -44,8 +44,9 @@ export default function LoginPage() {
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
-                  type="email"
-                  value={email}
+                  type="text"
+                  //type="email"
+                  value={emailVal}
                   placeholder="m@example.com"
                   required
                 />
@@ -64,7 +65,7 @@ export default function LoginPage() {
                   id="password"
                   type="password"
                   required
-                  value={password}
+                  value={passwordVal}
                 />
               </div>
               <Button type="submit" className="w-full">

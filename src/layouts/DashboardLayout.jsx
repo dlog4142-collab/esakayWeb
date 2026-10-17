@@ -19,7 +19,7 @@ export default function DashboardLayout() {
   const title = pageTitles[pathname] ?? "eSakay";
 
   return (
-    <SidebarProvider className="flex h-screen w-full overflow-hidden p-6">
+    <SidebarProvider className="flex h-screen w-full overflow-hidden">
       <AppSidebar />
 
       <SidebarInset className="flex flex-col flex-1 h-full bg-background w-full min-w-0 overflow-hidden px-15 ">
