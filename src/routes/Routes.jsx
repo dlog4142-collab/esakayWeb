@@ -1,6 +1,6 @@
 import { Routes as ReactRouterRoutes, Route, Navigate } from "react-router-dom";
 import ProtectedRoute from "../components/ProtectedRoute";
-import DashboardLayout from "../layouts/dashboard-layout";
+import DashboardLayout from "../layouts/DashboardLayout";
 import LoginPage from "../pages/LoginPage";
 import DashboardPage from "../pages/dashboard";
 import ExplorePage from "../pages/explore";
