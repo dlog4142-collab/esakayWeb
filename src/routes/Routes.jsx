@@ -4,6 +4,8 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import LoginPage from "../pages/LoginPage";
 import ExplorePage from "../pages/sidebars/ExplorePage";
 import AnalyticsPage from "../pages/sidebars/AnalyticsPage";
+import UserProfilePage from "../pages/sidebars/User/UserListsPage";
+import UserListsPage from "../pages/sidebars/User/UserListsPage";
 import MapPage from "../pages/sidebars/MapPage";
 import NotFoundPage from "../pages/NotFoundPage";
 
@@ -17,6 +19,11 @@ const Routes = () => {
           <Route path="dashboard">
             <Route index element={<AnalyticsPage />} />
             <Route path="explore" element={<ExplorePage />} />
+          </Route>
+
+          <Route path="user">
+            <Route path="profile" element={<UserProfilePage />} />
+            <Route path="lists" element={<UserListsPage />} />
           </Route>
 
           <Route path="map" element={<MapPage />} />

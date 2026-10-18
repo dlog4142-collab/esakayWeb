@@ -73,8 +73,8 @@ const navItems = [
     icon: UserGroup03Icon,
     isActive: true,
     items: [
-      { title: "Profile", url: "/dashboard/analytics" },
-      { title: "List", url: "/dashboard/analytics" },
+      { title: "Profile", url: "/user/profile" },
+      { title: "List", url: "/user/lists" },
     ],
   },
   {
@@ -84,7 +84,6 @@ const navItems = [
     isActive: true,
     items: [
       { title: "Register", url: "/dashboard/analytics" },
-      { title: "Forgot Password", url: "/dashboard/analytics" },
       { title: "Reset Password", url: "/dashboard/analytics" },
     ],
   },
