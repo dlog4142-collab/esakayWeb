@@ -2,9 +2,9 @@ import { Routes as ReactRouterRoutes, Route, Navigate } from "react-router-dom";
 import ProtectedRoute from "../components/ProtectedRoute";
 import DashboardLayout from "../layouts/DashboardLayout";
 import LoginPage from "../pages/LoginPage";
-import DashboardPage from "../pages/dashboard";
-import ExplorePage from "../pages/explore";
-import MapPage from "../pages/map";
+import ExplorePage from "../pages/sidebars/ExplorePage";
+import AnalyticsPage from "../pages/sidebars/AnalyticsPage";
+import MapPage from "../pages/sidebars/MapPage";
 import NotFoundPage from "../pages/NotFoundPage";
 
 const Routes = () => {
@@ -14,9 +14,12 @@ const Routes = () => {
 
       <Route element={<ProtectedRoute />}>
         <Route element={<DashboardLayout />}>
-          <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/explore" element={<ExplorePage />} />
-          <Route path="/map" element={<MapPage />} />
+          <Route path="dashboard">
+            <Route index element={<AnalyticsPage />} />
+            <Route path="explore" element={<ExplorePage />} />
+          </Route>
+
+          <Route path="map" element={<MapPage />} />
         </Route>
       </Route>
 
