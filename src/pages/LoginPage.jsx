@@ -20,12 +20,14 @@ export default function LoginPage() {
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    const res = await authApi.login({
+
+    /**   const res = await authApi.login({
       email: emailVal,
       password: passwordVal,
-    });
-    localStorage.setItem("auth_token", res.token);
-    // navigate("/dashboard");
+    }); **/
+    //localStorage.setItem("auth_token", res.token);
+
+    navigate("/dashboard");
   };
 
   return (

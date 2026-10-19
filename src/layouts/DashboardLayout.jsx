@@ -12,6 +12,8 @@ const pageTitles = {
   "/dashboard": "Dashboard",
   "/explore": "Explore",
   "/map": "Live Map",
+  "/user/lists": "User Lists",
+  "/user/profile": "User Profile",
 };
 
 export default function DashboardLayout() {

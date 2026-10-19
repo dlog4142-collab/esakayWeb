@@ -120,9 +120,9 @@ export function AppSidebar(props) {
                 <HugeiconsIcon icon={Motorbike01Icon} strokeWidth={2} />
               </div>
               <div className="grid flex-1 text-left text-xs leading-tight">
-                <span className="truncate font-medium">Acme Inc</span>
+                <span className="truncate font-medium">E-sakay</span>
                 <span className="truncate text-muted-foreground">
-                  Enterprise
+                  Private Transport System
                 </span>
               </div>
               <HugeiconsIcon
