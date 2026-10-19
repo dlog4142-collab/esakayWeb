@@ -4,8 +4,8 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import LoginPage from "../pages/LoginPage";
 import ExplorePage from "../pages/sidebars/ExplorePage";
 import AnalyticsPage from "../pages/sidebars/AnalyticsPage";
-import UserProfilePage from "../pages/sidebars/User/UserProfilePage";
-import UserListsPage from "../pages/sidebars/User/UserListsPage";
+import UserProfilePage from "../pages/sidebars/user/UserProfilePage";
+import UserListsPage from "../pages/sidebars/user/UserListsPage";
 import MapPage from "../pages/sidebars/MapPage";
 import NotFoundPage from "../pages/NotFoundPage";
 
