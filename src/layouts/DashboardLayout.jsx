@@ -25,19 +25,7 @@ export default function DashboardLayout() {
       <AppSidebar />
 
       <SidebarInset className="flex flex-col flex-1 h-full bg-background w-full min-w-0 overflow-hidden">
-        <header className="flex h-10 shrink-0 items-center p-4 mt-3 bg-card w-full ">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbPage className="font-medium text-foreground text-base">
-                  {title}
-                </BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </header>
-
-        <div className="flex-1 w-full overflow-y-auto ">
+        <div className="flex-1 w-full overflow-y-auto px-5">
           <Outlet />
         </div>
       </SidebarInset>

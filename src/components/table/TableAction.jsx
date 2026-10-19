@@ -47,7 +47,7 @@ export function TableActions() {
   const currentData = allProducts.slice(startIndex, startIndex + limit);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 ">
       {/* Removed overflow restrictions so content flows naturally with the page */}
       <div className="rounded-md border bg-card">
         <Table>
