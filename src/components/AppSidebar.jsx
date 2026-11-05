@@ -111,7 +111,7 @@ export function AppSidebar(props) {
   };
 
   return (
-    <Sidebar collapsible="none">
+    <Sidebar collapsible="none" className="bg-white">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>

@@ -1,11 +1,20 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { AppSidebar } from "@/components/AppSidebar";
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
+
+import Header from "./Header";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
+  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
+  BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
 const pageTitles = {
@@ -24,9 +33,29 @@ export default function DashboardLayout() {
     <SidebarProvider className="flex h-screen w-full overflow-hidden">
       <AppSidebar />
 
-      <SidebarInset className="flex flex-col flex-1 h-full bg-background w-full min-w-0 overflow-hidden">
-        <div className="flex-1 w-full overflow-y-auto px-5">
-          <Outlet />
+      <SidebarInset className="flex flex-col flex-1 min-h-screen bg-background w-full min-w-0">
+        {/* Enhanced Header */}
+        <Header />
+
+        {/* Main Content Area */}
+        <div className="flex-1 w-full overflow-y-auto p-10 bg-gray-50">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink render={<a href="/" />}>
+                  Dashboard
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{title}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+
+          <div className="bg-white rounded-sm p-6 w-full">
+            <Outlet />
+          </div>
         </div>
       </SidebarInset>
     </SidebarProvider>
