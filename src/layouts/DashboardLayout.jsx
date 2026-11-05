@@ -18,9 +18,10 @@ import {
 } from "@/components/ui/breadcrumb";
 
 const pageTitles = {
-  "/dashboard": "Dashboard",
+  "/dashboard": "Analytics",
   "/explore": "Explore",
   "/map": "Live Map",
+  "/customer": "Customer",
   "/user/lists": "User Lists",
   "/user/profile": "User Profile",
 };

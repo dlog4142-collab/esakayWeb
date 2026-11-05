@@ -62,11 +62,10 @@ const navItems = [
     ],
   },
   {
-    title: "Customer",
+    title: "Customer (Not final)",
     url: "/customer",
     icon: UserListIcon,
   },
-
   {
     title: "User",
     url: "/user",
