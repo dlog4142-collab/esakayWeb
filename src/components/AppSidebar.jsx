@@ -80,11 +80,6 @@ const navItems = [
     title: "Authentication",
     url: "/authentication",
     icon: SecurityWarningIcon,
-    isActive: true,
-    items: [
-      { title: "Register", url: "/dashboard/analytics" },
-      { title: "Reset Password", url: "/dashboard/analytics" },
-    ],
   },
 ];
 

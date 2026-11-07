@@ -9,6 +9,7 @@ import UserListsPage from "../pages/sidebars/user/UserListsPage";
 import MapPage from "../pages/sidebars/MapPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import CustomerPage from "@/pages/sidebars/CustomerPage";
+import AuthenticationPage from "@/pages/sidebars/AuthenticationPage";
 
 const Routes = () => {
   return (
@@ -21,15 +22,14 @@ const Routes = () => {
             <Route index element={<AnalyticsPage />} />
             <Route path="explore" element={<ExplorePage />} />
           </Route>
-
           <Route path="customer" element={<CustomerPage />} />
-
           <Route path="user">
             <Route path="profile" element={<UserProfilePage />} />
             <Route path="lists" element={<UserListsPage />} />
           </Route>
-
           <Route path="map" element={<MapPage />} />
+          //authentication
+          <Route path="authentication" element={<AuthenticationPage />} />
         </Route>
       </Route>
 

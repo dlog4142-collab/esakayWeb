@@ -1,11 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { AppSidebar } from "@/components/AppSidebar";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
-
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import Header from "./Header";
 
 import {
@@ -24,6 +19,7 @@ const pageTitles = {
   "/customer": "Customer",
   "/user/lists": "User Lists",
   "/user/profile": "User Profile",
+  "/authentication": "Authentication",
 };
 
 export default function DashboardLayout() {

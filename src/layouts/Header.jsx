@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,24 +12,18 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Bell, LogOut, User, Maximize, CreditCard } from "lucide-react";
 
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbList,
-  BreadcrumbPage,
-} from "@/components/ui/breadcrumb";
-
-const pageTitles = {
-  "/dashboard": "Dashboard",
-  "/explore": "Explore",
-  "/map": "Live Map",
-  "/user/lists": "User Lists",
-  "/user/profile": "User Profile",
-};
-
 export default function Header() {
-  const { pathname } = useLocation();
-  const title = pageTitles[pathname] ?? "eSakay";
+  const navigate = useNavigate();
+
+  const lagout = () => {
+    // need the logout function from the server
+    // to delete the access of the token
+
+    localStorage.removeItem("token");
+
+    navigate("/login", { replace: true });
+    return console.log("logout");
+  };
 
   return (
     <header className="flex h-14 shrink-0 items-center justify-between px-6 border-b bg-card w-full">
@@ -105,7 +99,10 @@ export default function Header() {
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="text-destructive focus:text-destructive">
+            <DropdownMenuItem
+              onClick={() => lagout()}
+              className="text-destructive focus:text-destructive"
+            >
               <LogOut className="mr-2 h-4 w-4" />
               <span>Logout</span>
             </DropdownMenuItem>
