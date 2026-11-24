@@ -19,27 +19,31 @@ import {
 } from "@/components/ui/table";
 import { TablePagination } from "@/components/table/TablePagination";
 
-const allProducts = [
-  { id: 1, product: "Wireless Mouse", price: "$29.99" },
-  { id: 2, product: "Mechanical Keyboard", price: "$129.99" },
-  { id: 3, product: "USB-C Hub", price: "$49.99" },
-  { id: 4, product: 'HD Monitor 27"', price: "$249.99" },
-  { id: 5, product: "Ergonomic Office Chair", price: "$189.99" },
-  { id: 6, product: "Desk Lamp LED", price: "$34.99" },
-  { id: 7, product: "Laptop Stand", price: "$39.99" },
-  { id: 8, product: "Bluetooth Speaker", price: "$59.99" },
-  { id: 9, product: "External SSD 1TB", price: "$99.99" },
-  { id: 10, product: "Webcam 1080p", price: "$69.99" },
-  { id: 11, product: "Noise-Canceling Headphones", price: "$199.99" },
-  { id: 12, product: "Mouse Pad Extended", price: "$19.99" },
-  { id: 13, product: "Type-C Cable 2m", price: "$14.99" },
-  { id: 14, product: "Portable Power Bank", price: "$45.99" },
-  { id: 15, product: "Smart Desk Pad", price: "$55.99" },
-];
-
 export function TableActions() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [rowsPerPage, setRowsPerPage] = useState("25");
+  const [rowsPerPage, setRowsPerPage] = useState("10");
+
+  const allProducts = [
+    { product: "Desk Lamp LED", price: "$34.99" },
+    { product: "Laptop Stand", price: "$39.99" },
+    { product: "Bluetooth Speaker", price: "$59.99" },
+    { product: "External SSD 1TB", price: "$99.99" },
+    { product: "Webcam 1080p", price: "$69.99" },
+    { product: "Noise-Canceling Headphones", price: "$199.99" },
+    { product: "Mouse Pad Extended", price: "$19.99" },
+    { product: "Type-C Cable 2m", price: "$14.99" },
+    { product: "Portable Power Bank", price: "$45.99" },
+    { product: "Smart Desk Pad", price: "$55.99" },
+  ];
+
+  const allColumns = [
+    {
+      name: "Product",
+    },
+    {
+      name: "Name",
+    },
+  ];
 
   const limit = parseInt(rowsPerPage, 15);
   const totalPages = Math.ceil(allProducts.length / limit);
@@ -53,14 +57,15 @@ export function TableActions() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Product</TableHead>
-              <TableHead>Price</TableHead>
+              {allColumns.map((item, index) => (
+                <TableHead key={index}>{item.name}</TableHead>
+              ))}
               <TableHead className="text-right">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {currentData.map((item) => (
-              <TableRow key={item.id}>
+            {currentData.map((item, index) => (
+              <TableRow key={index}>
                 <TableCell className="font-medium">{item.product}</TableCell>
                 <TableCell>{item.price}</TableCell>
                 <TableCell className="text-right">
@@ -89,16 +94,18 @@ export function TableActions() {
         </Table>
       </div>
 
-      <TablePagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={(page) => setCurrentPage(page)}
-        rowsPerPage={rowsPerPage}
-        onRowsPerPageChange={(val) => {
-          setRowsPerPage(val);
-          setCurrentPage(1);
-        }}
-      />
+      <div className="flex justify-end">
+        <TablePagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={(page) => setCurrentPage(page)}
+          rowsPerPage={rowsPerPage}
+          onRowsPerPageChange={(val) => {
+            setRowsPerPage(val);
+            setCurrentPage(1);
+          }}
+        />
+      </div>
     </div>
   );
 }

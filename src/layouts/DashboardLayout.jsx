@@ -35,7 +35,7 @@ export default function DashboardLayout() {
         <Header />
 
         {/* Main Content Area */}
-        <div className="flex-1 w-full overflow-y-auto p-10 bg-gray-50">
+        <div className="flex-1 w-full overflow-y-auto px-20 py-5 bg-gray-50">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>

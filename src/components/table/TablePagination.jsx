@@ -19,7 +19,7 @@ export function TablePagination({
   currentPage = 1,
   totalPages = 1,
   onPageChange,
-  rowsPerPage = "25",
+  rowsPerPage = "5",
   onRowsPerPageChange,
 }) {
   return (
@@ -32,18 +32,13 @@ export function TablePagination({
           </SelectTrigger>
           <SelectContent align="start">
             <SelectGroup>
-              <SelectItem value="2">2</SelectItem>
-              <SelectItem value="25">25</SelectItem>
-              <SelectItem value="50">50</SelectItem>
-              <SelectItem value="100">100</SelectItem>
+              <SelectItem value="5">5</SelectItem>
+              <SelectItem value="10">10</SelectItem>
+              <SelectItem value="15">15</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
       </Field>
-
-      <div className="text-sm text-muted-foreground">
-        Page {currentPage} of {totalPages || 1}
-      </div>
 
       <Pagination className="mx-0 w-auto">
         <PaginationContent>
@@ -60,6 +55,11 @@ export function TablePagination({
               }
             />
           </PaginationItem>
+
+          <div className="text-sm text-muted-foreground">
+            {currentPage} of {totalPages || 1}
+          </div>
+
           <PaginationItem>
             <PaginationNext
               href="#"
