@@ -49,7 +49,6 @@ export default function DashboardLayout() {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
-
           <div className="bg-white rounded-sm p-6 w-full">
             <Outlet />
           </div>

@@ -1,7 +1,8 @@
 import { Routes as ReactRouterRoutes, Route, Navigate } from "react-router-dom";
 import ProtectedRoute from "../components/ProtectedRoute";
 import DashboardLayout from "../layouts/DashboardLayout";
-import LoginPage from "../pages/LoginPage";
+import SignInPage from "../pages/SignInPage";
+import SignUpPage from "../pages/SignUpPage";
 import ExplorePage from "../pages/sidebars/ExplorePage";
 import AnalyticsPage from "../pages/sidebars/AnalyticsPage";
 import UserProfilePage from "../pages/sidebars/user/UserProfilePage";
@@ -14,7 +15,8 @@ import AuthenticationPage from "@/pages/sidebars/AuthenticationPage";
 const Routes = () => {
   return (
     <ReactRouterRoutes>
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signIn" element={<SignInPage />} />
+      <Route path="/signUp" element={<SignUpPage />} />
 
       <Route element={<ProtectedRoute />}>
         <Route element={<DashboardLayout />}>

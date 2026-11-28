@@ -12,7 +12,7 @@ import { Label } from "@/components/ui/label";
 import { useNavigate } from "react-router-dom";
 import { authApi } from "../api/authApi";
 
-export default function LoginPage() {
+export default function SignInPage() {
   const navigate = useNavigate();
   // const email = "hello@example.com";
   const emailVal = "admin@gmail.com";
@@ -28,6 +28,10 @@ export default function LoginPage() {
     //localStorage.setItem("auth_token", res.token);
 
     navigate("/dashboard");
+  };
+
+  const handleSignUp = async () => {
+    navigate("/signUp");
   };
 
   return (
@@ -79,8 +83,12 @@ export default function LoginPage() {
         <CardFooter className="flex justify-center">
           <p className="text-sm text-muted-foreground">
             Don&apos;t have an account?{" "}
-            <a href="#" className="underline underline-offset-4">
-              Sign up
+            <a
+              href="#"
+              className="underline underline-offset-3"
+              onClick={() => handleSignUp()}
+            >
+              Sign Up
             </a>
           </p>
         </CardFooter>

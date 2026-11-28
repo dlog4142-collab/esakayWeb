@@ -15,13 +15,13 @@ import { Search, Bell, LogOut, User, Maximize, CreditCard } from "lucide-react";
 export default function Header() {
   const navigate = useNavigate();
 
-  const lagout = () => {
+  const signOut = () => {
     // need the logout function from the server
     // to delete the access of the token
 
     localStorage.removeItem("token");
 
-    navigate("/login", { replace: true });
+    navigate("/signIn", { replace: true });
     return console.log("logout");
   };
 
@@ -100,7 +100,7 @@ export default function Header() {
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem
-              onClick={() => lagout()}
+              onClick={() => signOut()}
               className="text-destructive focus:text-destructive"
             >
               <LogOut className="mr-2 h-4 w-4" />
